@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MovieTime</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- User Management Section -->
+    <section id="user-management">
+      <h2>User Management</h2>
+      <div id="registration">
+        <h3>Register</h3>
+        <form id="registration-form">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+          <button type="submit">Register</button>
+        </form>
+      </div>
+      <div id="login">
+        <h3>Login</h3>
+        <form id="login-form">
+          <label for="email">Email:</label>
+          <input type="email" id="login-email" name="email" required />
+          <label for="password">Password:</label>
+          <input type="password" id="login-password" name="password" required />
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Booking System Section -->
+    <section id="booking-system">
+        <h2>Booking System</h2>
+        <!-- Screen Configuration Section -->
+<section id="screen-configuration" style="display: none;">
+    <h3>Select Screen</h3>
+    <div id="screen-selection">
+        <!-- Screens will be dynamically added here -->
+    </div>
+</section>
+
+        <!-- Movie Selection -->
+        <div id="movie-selection">
+            <h3>Select a Movie</h3>
+            <div id="movies-list">
+                <!-- Movies will be dynamically added here -->
+            </div>
+        </div>
+    
+        <!-- Seat Selection -->
+        <div id="seat-selection" style="display: none;">
+            <h3>Select Seats</h3>
+            <div id="seat-map">
+                <!-- Seat map will be dynamically added here -->
+            </div>
+            <button id="proceed-to-payment">Proceed to Payment</button>
+        </div>
+    
+        <!-- Payment -->
+        <div id="payment" style="display: none;">
+            <h3>Payment</h3>
+            <form id="payment-form">
+                <label for="card-number">Card Number:</label>
+                <input type="text" id="card-number" name="card-number" required>
+                <label for="expiry-date">Expiry Date:</label>
+                <input type="text" id="expiry-date" name="expiry-date" required>
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" required>
+                <button type="submit">Pay Now</button>
+            </form>
+        </div>
+    
+        <!-- Confirmation -->
+        <div id="confirmation" style="display: none;">
+            <h3>Booking Confirmation</h3>
+            <p id="confirmation-details"></p>
+        </div>
+    </section>
+    
+
+    <!-- Food Ordering Section -->
+   <!-- Food Ordering Section -->
+<section id="food-ordering">
+    <h2>Food Ordering (Optional)</h2>
+
+    <!-- Menu Display -->
+    <div id="menu-display">
+        <h3>Menu</h3>
+        <div id="menu-list">
+            <!-- Menu items will be dynamically added here -->
+        </div>
+    </div>
+
+    <!-- Cart -->
+    <div id="cart" style="display: none;">
+        <h3>Your Cart</h3>
+        <ul id="cart-items">
+            <!-- Cart items will be dynamically added here -->
+        </ul>
+        <button id="checkout">Checkout</button>
+    </div>
+
+    <!-- Food Order Payment -->
+    <div id="food-payment" style="display: none;">
+        <h3>Payment</h3>
+        <form id="food-payment-form">
+            <label for="food-card-number">Card Number:</label>
+            <input type="text" id="food-card-number" name="card-number" required>
+            <label for="food-expiry-date">Expiry Date:</label>
+            <input type="text" id="food-expiry-date" name="expiry-date" required>
+            <label for="food-cvv">CVV:</label>
+            <input type="text" id="food-cvv" name="cvv" required>
+            <button type="submit">Pay Now</button>
+        </form>
+    </div>
+
+    <!-- Food Order Confirmation -->
+    <div id="food-confirmation" style="display: none;">
+        <h3>Order Confirmation</h3>
+        <p id="food-confirmation-details"></p>
+    </div>
+</section>
+
+
+    <!-- Seat Management Section -->
+    <section id="seat-management">
+      <h2>Seat Management</h2>
+      <!-- Seat Availability, Seat Locking, Seat Release -->
+    </section>
+
+    <!-- Screen Configuration Section -->
+    <section id="screen-configuration">
+      <h2>Screen Configuration</h2>
+      <!-- Screen Selection, Seat Limit -->
+    </section>
+
+   <!-- Admin Panel Section -->
+<section id="admin-panel" style="display: none;">
+    <h2>Admin Panel</h2>
+
+    <!-- Screen Management -->
+    <div id="screen-management">
+        <h3>Screen Management</h3>
+        <button onclick="showAddScreenForm()">Add Screen</button>
+        <div id="screens-list">
+            <!-- List of screens will be dynamically added here -->
+        </div>
+        <div id="add-screen-form" style="display: none;">
+            <h4>Add Screen</h4>
+            <form id="new-screen-form">
+                <label for="screen-name">Screen Name:</label>
+                <input type="text" id="screen-name" required>
+                <label for="screen-capacity">Capacity:</label>
+                <input type="number" id="screen-capacity" required>
+                <button type="submit">Add Screen</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Booking Management -->
+    <div id="booking-management">
+        <h3>Booking Management</h3>
+        <div id="bookings-list">
+            <!-- List of bookings will be dynamically added here -->
+        </div>
+    </div>
+
+    <!-- Food Menu Management -->
+    <div id="food-menu-management">
+        <h3>Food Menu Management</h3>
+        <button onclick="showAddFoodItemForm()">Add Food Item</button>
+        <div id="food-items-list">
+            <!-- List of food items will be dynamically added here -->
+        </div>
+        <div id="add-food-item-form" style="display: none;">
+            <h4>Add Food Item</h4>
+            <form id="new-food-item-form">
+                <label for="food-name">Food Name:</label>
+                <input type="text" id="food-name" required>
+                <label for="food-price">Price:</label>
+                <input type="number" id="food-price" required>
+                <button type="submit">Add Food Item</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Notifications Section -->
+    <section id="notifications">
+      <h2>Notifications</h2>
+      <!-- Booking Confirmation, Seat Availability Alerts -->
+    </section>
+
+    <!-- Security Section -->
+    <section id="security">
+      <h2>Security</h2>
+      <!-- User Authentication, Data Encryption -->
+    </section>
+
+    <!-- Deployment Section -->
+    <section id="deployment">
+      <h2>Deployment</h2>
+      <!-- Frontend application on Vercel, Backend services on Render -->
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
